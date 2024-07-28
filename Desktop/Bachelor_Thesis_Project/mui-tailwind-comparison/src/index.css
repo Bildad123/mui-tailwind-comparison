@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;  
+
+.btn {
+  @apply inline-flex items-center justify-center border-0 m-0 p-0 cursor-pointer appearance-none no-underline font-roboto font-medium text-sm leading-7 tracking-wider uppercase py-1.5 px-4 rounded transition-all duration-200 ease-in-out;
+}
+
+.btn:hover {
+  @apply shadow-md;
+}
+
+.btn-outlined {
+  @apply border border-blue-600 text-blue-600 hover:text-blue-700 hover:bg-blue-50;
+}
+
