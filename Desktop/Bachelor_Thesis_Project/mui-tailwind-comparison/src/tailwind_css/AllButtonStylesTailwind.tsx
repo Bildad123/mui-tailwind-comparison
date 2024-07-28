@@ -12,7 +12,7 @@ const AllButtonStylesTailwind = () => {
   const handleSectionChange = (
     section: "ButtonColor" | "ButtonVariant" | "Interactability" | null
   ) => {
-    setActiveSection(section);
+    setActiveSection(section);;
   };
 
   return (
