@@ -20,7 +20,7 @@ const AllButtonStylesMui = () => {
       <ButtonGroup
         variant="contained"
         aria-label="allButtonStyles demo buttons"
-        sx={{my:3}}
+        sx={{mb:3}}
       >
         <Button
           variant={activeSection === "ButtonColor" ? "contained" : "text"}

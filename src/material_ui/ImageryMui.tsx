@@ -38,7 +38,7 @@ const handleSectionChange = (
 };
   return (
     <Container maxWidth="xl">
-       <ButtonGroup variant="contained" aria-label="imagery demo buttons"sx={{my:3}} >
+       <ButtonGroup variant="contained" aria-label="imagery demo buttons"sx={{mb:3}} >
         <Button
           variant={activeSection === "profileImage" ? "contained" : "text"}
           onClick={() => handleSectionChange("profileImage")}

@@ -68,7 +68,7 @@ const MuiColorTheme: React.FC = () => {
   const theme = useTheme(); // Access Material-UI theme
   const [showPaletteColors, setShowPaletteColors] = useState(true);
 
-  const paletteKeys = [  
+  const paletteKeys = [
     "primary",
     "secondary",
     "error",
@@ -94,7 +94,7 @@ const MuiColorTheme: React.FC = () => {
         </Button>
       </ButtonGroup>
 
-      {showPaletteColors && (
+      {!showPaletteColors && (
         <TableContainer component={Paper}>
           <Table>
             <TableHead>
@@ -133,7 +133,7 @@ const MuiColorTheme: React.FC = () => {
           </Table>
         </TableContainer>
       )}
-      {!showPaletteColors && (
+      {showPaletteColors && (
         <TableContainer component={Paper}>
           <Table>
             <TableHead>

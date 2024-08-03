@@ -13,7 +13,7 @@ const TypographyMui = () => {
 
   return (
     <Container maxWidth="xl">
-      <Box sx={{ my: 4 }}>
+      <Box sx={{ mb: 3 }}>
         <ButtonGroup variant="contained">
           <Button
             onClick={() =>

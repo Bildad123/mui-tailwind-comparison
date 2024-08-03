@@ -1797,7 +1797,7 @@ const IconographyTailwind = () => {
   };
 
   return (
-    <Container maxWidth={"xl"} sx={{ my: 4 }}>
+    <Container maxWidth={"xl"} sx={{ mb: 3 }}>
       <ButtonGroup variant="contained" aria-label="icon filter buttons">
         <Button
           variant={activeSection === "Outlined" ? "contained" : "text"}

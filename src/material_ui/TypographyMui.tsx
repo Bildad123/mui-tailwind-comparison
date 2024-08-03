@@ -39,8 +39,8 @@ const TypographyMui: React.FC = () => {
 
   return (
     <Container maxWidth="xl">
-      <Box sx={{ my: 4 }}>
-        <ButtonGroup variant="contained" style={{ marginBottom: "16px" }}>
+      <Box sx={{ mb: 3 }}>
+        <ButtonGroup variant="contained" sx={{ marginBottom: 2 }}>
           <Button
             onClick={() => handleSectionToggle("variant")}
             variant={activeSection === "variant" ? "contained" : "outlined"}

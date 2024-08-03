@@ -13,11 +13,11 @@ const InputTailwind = () => {
   };
 
   return (
-    <Container maxWidth={"xl"}>
+    <Container maxWidth={"xl"}    sx={{ mb: 3 }}>
       <ButtonGroup
         variant="contained"
         aria-label="input demo buttons"
-        sx={{ my: 5 }}
+        sx={{ mb: 5 }}
       >
         <Button
           variant={activeSection === "variant" ? "contained" : "text"}

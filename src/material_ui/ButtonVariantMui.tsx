@@ -2,7 +2,7 @@ import { Button, Container, Stack } from "@mui/material";
 
 const MuiButton = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Stack
         gap={5}
         direction={"row"}

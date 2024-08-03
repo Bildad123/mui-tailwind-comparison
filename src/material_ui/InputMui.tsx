@@ -10,7 +10,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 
 export const InputMui = () => {
-
   const [activeSection, setActiveSection] = useState<
     "variant" | "startAdornment" | "endAdornment" | null
   >(null);
@@ -22,8 +21,12 @@ export const InputMui = () => {
   };
 
   return (
-    <Container maxWidth={"xl"} >
-      <ButtonGroup variant="contained" aria-label="input demo buttons" sx={{my:5}}>
+    <Container maxWidth={"xl"} sx={{ mb: 3 }}>
+      <ButtonGroup
+        variant="contained"
+        aria-label="input demo buttons"
+        sx={{ mb: 5 }}
+      >
         <Button
           variant={activeSection === "variant" ? "contained" : "text"}
           onClick={() => handleSectionChange("variant")}
