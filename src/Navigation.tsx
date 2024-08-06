@@ -1,7 +1,6 @@
-import { Box, Grid, Paper } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 import "./App.css";
 
-import { Section } from "./Navbar";
 import ColorSchemeComparism from "./comparism/ColorSchemeComparism";
 import TypographyComparism from "./comparism/TypographyComparism";
 import FlexBoxComparism from "./comparism/FlexBoxComparism";
@@ -11,6 +10,21 @@ import AllButtonStylesComparism from "./comparism/AllButtonStylesComparism";
 import ResponsivenessComparism from "./comparism/ResponsivenessComparism";
 import ShadowComparism from "./comparism/ShadowComparism";
 import InputComparism from "./comparism/InputComparism";
+
+type Section =
+  | "buttonVariant"
+  | "buttonColor"
+  | "colorScheme"
+  | "typography"
+  | "flexBox"
+  | "iconography"
+  | "imagery"
+  | "interactability"
+  | "button"
+  | "responsiveness"
+  | "shadow"
+  | "input"
+  | null;
 
 interface NavbarProps {
   activeSection:
@@ -34,7 +48,10 @@ function Navigation({ activeSection }: NavbarProps) {
   return (
     <>
       <Box width={"100%"}>
-        <Paper sx={{ minHeight: "100vh", py: 4, width: "100%" }}>
+        <Paper
+          sx={{ minHeight: "75vh", py: 4, width: "100%" }}
+          elevation={activeSection === "responsiveness" ? 0 : 5}
+        >
           {activeSection === "button" && <AllButtonStylesComparism />}
           {activeSection === "colorScheme" && <ColorSchemeComparism />}
           {activeSection === "typography" && <TypographyComparism />}

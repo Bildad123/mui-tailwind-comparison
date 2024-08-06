@@ -17,6 +17,7 @@ import { useState } from "react";
 import React from "react";
 import { useStyle } from "./StyleContext";
 import Navigation from "./Navigation";
+import { createTheme, ThemeProvider } from "@mui/material";
 
 const drawerWidth = 270;
 
@@ -44,11 +45,12 @@ const sections: { key: Section; label: string }[] = [
   { key: "imagery", label: "Imagery" },
   { key: "shadow", label: "Shadow" },
   { key: "input", label: "Textfield" },
+  { key: "responsiveness", label: "Responsiveness" },
 ];
 
 const App = () => {
   const [activeSection, setActiveSection] = useState<Section | null>(null);
-  const [open, setOpen] = useState<true | false>(false);
+  const [open, setOpen] = useState<true | false>(true);
   const handleDrawerOpen = () => setOpen(true);
   const handleDrawerClose = () => setOpen(false);
 
@@ -133,7 +135,7 @@ const App = () => {
           </ButtonGroup>
         </Box>
         <Divider />
-        <List>
+        <List sx={{ maxHeight: "90vh", overflow: "auto" }}>
           {sections.map((section, index) => (
             <React.Fragment key={section.key}>
               <Divider />
@@ -150,7 +152,7 @@ const App = () => {
           ))}
         </List>
       </Drawer>
-      <Box aria-label="main" width={'100%'}>
+      <Box aria-label="main" width={"100%"}>
         <Box sx={(theme) => ({ ...theme.mixins.toolbar })} />
         <Box
           sx={

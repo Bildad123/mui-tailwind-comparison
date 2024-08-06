@@ -1,0 +1,99 @@
+function ResponsiveTableTailwind() {
+  const items: {
+    id: number;
+    name: string;
+    created: Date;
+    high: number;
+    low: number;
+    average: number;
+  }[] = [
+    {
+      id: 1,
+      name: "First Item",
+      created: new Date("2024-01-15T08:30:00Z"),
+      high: 2935,
+      low: 1924,
+      average: 2429.5,
+    },
+    {
+      id: 2,
+      name: "Second Item",
+      created: new Date("2024-02-20T09:45:00Z"),
+      high: 439,
+      low: 231,
+      average: 335,
+    },
+    {
+      id: 3,
+      name: "Third Item",
+      created: new Date("2024-03-10T10:00:00Z"),
+      high: 1210,
+      low: 890,
+      average: 1050,
+    },
+    {
+      id: 4,
+      name: "Fourth Item",
+      created: new Date("2024-04-05T11:15:00Z"),
+      high: 745,
+      low: 450,
+      average: 597.5,
+    },
+    {
+      id: 5,
+      name: "Fifth Item",
+      created: new Date("2024-05-25T12:30:00Z"),
+      high: 990,
+      low: 600,
+      average: 795,
+    },
+  ];
+  return (
+    <div className="overflow-x-auto font-roboto">
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead>
+          <tr>
+            <th className="px-6 py-3 text-left text-sm  font-medium text-gray-900  tracking-wider">
+              Name
+            </th>
+            <th className="hidden sm:table-cell px-6 py-3 text-left text-sm font-medium text-gray-900 tracking-wider">
+              Created
+            </th>
+            <th className="hidden sm:table-cell px-6 py-3 text-left text-sm font-medium text-gray-900 tracking-wider">
+              High
+            </th>
+            <th className="hidden sm:table-cell px-6 py-3 text-left text-sm  font-medium text-gray-900 tracking-wider">
+              Low
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-mediumfont-medium text-gray-900 tracking-wider">
+              Average
+            </th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {items.map((item) => (
+            <tr key={item.id}>
+              <td className="px-6 py-4 whitespace-nowrap text-left text-sm">
+                {item.name}
+              </td>
+              <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-left text-sm">
+                {item.created.toDateString()}
+              </td>
+              <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-left text-sm">
+                {item.high}
+              </td>
+              <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-left text-sm ">
+                {item.low}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-left text-sm">
+                {item.average}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default ResponsiveTableTailwind;

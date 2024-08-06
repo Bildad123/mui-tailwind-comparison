@@ -11,7 +11,7 @@ const ShadowTailwind = () => {
     <div className="font-roboto flex justify-center items-center gap-16 min-h-screen flex-wrap">
       {shadowClasses.map((shadow, index) => (
         <div key={index} className="text-center">
-          <div className={`${shadow.class} h-72 w-36 p-4 rounded-md bg-gray-50`}>
+          <div className={`${shadow.class} h-72 w-36 p-4 rounded-md bg-gray-100`}>
             <div className="h-full w-full"></div>
           </div>
           <p className="text-sm text-gray-500 mt-2">{shadow.label}</p>
