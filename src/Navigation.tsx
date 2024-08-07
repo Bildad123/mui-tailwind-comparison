@@ -10,6 +10,7 @@ import AllButtonStylesComparism from "./comparism/AllButtonStylesComparism";
 import ResponsivenessComparism from "./comparism/ResponsivenessComparism";
 import ShadowComparism from "./comparism/ShadowComparism";
 import InputComparism from "./comparism/InputComparism";
+import LandingPage from "./comparism/LandingPage";
 
 type Section =
   | "buttonVariant"
@@ -61,6 +62,7 @@ function Navigation({ activeSection }: NavbarProps) {
           {activeSection === "responsiveness" && <ResponsivenessComparism />}
           {activeSection === "shadow" && <ShadowComparism />}
           {activeSection === "input" && <InputComparism />}
+          {activeSection ? <></> : <LandingPage />}
         </Paper>
       </Box>
     </>
