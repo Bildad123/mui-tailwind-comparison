@@ -34,6 +34,7 @@ type Section =
   | "responsiveness"
   | "shadow"
   | "input"
+  | "alert"
   | null;
 
 const sections: { key: Section; label: string }[] = [
@@ -46,6 +47,7 @@ const sections: { key: Section; label: string }[] = [
   { key: "shadow", label: "Shadow" },
   { key: "input", label: "Textfield" },
   { key: "responsiveness", label: "Responsiveness" },
+  { key: "alert", label: "Alert" },
 ];
 
 const App = () => {
