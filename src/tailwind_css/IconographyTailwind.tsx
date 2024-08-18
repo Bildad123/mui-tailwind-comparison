@@ -1,5 +1,5 @@
 import { Button, ButtonGroup, Container } from "@mui/material";
-import React, { useState } from "react";
+import  { useState } from "react";
 
 // Define an array of SVG icons as React components
 const svgIcons = [

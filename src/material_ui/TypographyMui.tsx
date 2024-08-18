@@ -208,15 +208,15 @@ const TypographyMui: React.FC = () => {
               alignItems={"flex-start"}
             >
               <Typography fontSize={"3.75rem"}>Text 6xl</Typography>
-              <Typography fontSize={"3rem"}>Text 5xl</Typography>
-              <Typography fontSize={"2.25rem"}>Text 4xl</Typography>
-              <Typography fontSize={"1.875rem"}>Text 3xl</Typography>
+              <Typography fontSize={"48px"}>Text 5xl</Typography>
+              <Typography fontSize={"2.25em"}>Text 4xl</Typography>
+              <Typography fontSize={"30px"}>Text 3xl</Typography>
               <Typography fontSize={"1.5rem"}>Text 2xl</Typography>
-              <Typography fontSize={"1.25rem"}>Text xl</Typography>
-              <Typography fontSize={"1.125rem"}>Text lg</Typography>
+              <Typography fontSize={"20px"}>Text xl</Typography>
+              <Typography fontSize={"1.125em"}>Text lg</Typography>
               <Typography fontSize={"1rem"}>Text base</Typography>
-              <Typography fontSize={"0.875rem"}>Text sm</Typography>
-              <Typography fontSize={"0.75rem"}>Text xs</Typography>
+              <Typography fontSize={"14px"}>Text sm</Typography>
+              <Typography fontSize={"12px"}>Text xs</Typography>
             </Box>
           </Box>
         )}

@@ -18,6 +18,7 @@ const AlertTailwind = () => {
         variant="contained"
         aria-label="alert demo buttons"
         sx={{ mb: 2 }}
+        
       >
         <Button
           variant={activeSection === "DefaultAlert" ? "contained" : "text"}

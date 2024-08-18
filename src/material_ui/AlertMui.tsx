@@ -1,6 +1,6 @@
 import {
   Alert,
-  Box,
+
   Button,
   ButtonGroup,
   Container,
@@ -30,36 +30,7 @@ const AlertMui = () => {
 
   return (
     <Container maxWidth={"xl"}>
-      <ButtonGroup variant="contained" aria-label="alert demo buttons" sx={{mb:2}} >
-        <Button
-          variant={activeSection === "DefaultAlert" ? "contained" : "text"}
-          onClick={() => handleSectionChange("DefaultAlert")}
-        >
-          Default Alert
-        </Button>
-        <Button
-          variant={activeSection === "Severity" ? "contained" : "text"}
-          onClick={() => handleSectionChange("Severity")}
-        >
-          Severity
-        </Button>
-        <Button
-          variant={activeSection === "Variants" ? "contained" : "text"}
-          onClick={() => handleSectionChange("Variants")}
-        >
-          Variants
-        </Button>
-        <Button
-          variant={
-            activeSection === "BackgroundColor With sx prop"
-              ? "contained"
-              : "text"
-          }
-          onClick={() => handleSectionChange("BackgroundColor With sx prop")}
-        >
-          BackgroundColor With sx prop
-        </Button>
-      </ButtonGroup>
+  
 
       {activeSection === "DefaultAlert" && (
         <>
@@ -76,7 +47,7 @@ const AlertMui = () => {
         </Stack>
       )}
 
-      {activeSection === "Variants" && (
+      {activeSection === "Variants" &&  (
         <Stack gap={6}>
           <Stack gap={2}>
             <Alert variant="filled" severity="success">
