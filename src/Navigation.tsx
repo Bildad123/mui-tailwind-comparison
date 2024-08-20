@@ -12,6 +12,7 @@ import ShadowComparism from "./comparism/ShadowComparism";
 import InputComparism from "./comparism/InputComparism";
 import LandingPage from "./comparism/LandingPage";
 import AlertComparism from "./comparism/AlertComparism";
+import AnimationComparism from "./comparism/AnimationComparism";
 
 type Section =
   | "buttonVariant"
@@ -27,6 +28,7 @@ type Section =
   | "shadow"
   | "input"
   | "alert"
+  | "animation"
   | null;
 
 interface NavbarProps {
@@ -44,6 +46,7 @@ interface NavbarProps {
     | "shadow"
     | "input"
     | "alert"
+    | "animation"
     | null;
   setActiveSection: (section: Section) => void;
 }
@@ -52,10 +55,7 @@ function Navigation({ activeSection }: NavbarProps) {
   return (
     <>
       <Box width={"100%"}>
-        <Paper
-          sx={{ minHeight: "75vh", py: 4, width: "100%" }}
-          elevation={activeSection === "responsiveness" ? 0 : 5}
-        >
+        <Paper sx={{ minHeight: "75vh", py: 4, width: "100%" }} elevation={5}>
           {activeSection === "button" && <AllButtonStylesComparism />}
           {activeSection === "colorScheme" && <ColorSchemeComparism />}
           {activeSection === "typography" && <TypographyComparism />}
@@ -66,6 +66,7 @@ function Navigation({ activeSection }: NavbarProps) {
           {activeSection === "shadow" && <ShadowComparism />}
           {activeSection === "input" && <InputComparism />}
           {activeSection === "alert" && <AlertComparism />}
+          {activeSection === "animation" && <AnimationComparism />}
           {activeSection ? <></> : <LandingPage />}
         </Paper>
       </Box>

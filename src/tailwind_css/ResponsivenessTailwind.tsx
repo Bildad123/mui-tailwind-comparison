@@ -1,12 +1,56 @@
-import { Paper } from "@mui/material";
+import { Button, ButtonGroup, Container, Paper } from "@mui/material";
 import ResponsiveTableTailwind from "./ResponsiveTableTailwind";
+import TailwindBreakpoints from "./TailwindBreakpoints";
+import { useState } from "react";
 
 const ResponsivenessTailwind = () => {
-  const breakpoints = false;
-  const responsiveTables = true;
+  const [activeSection, setActiveSection] = useState<
+    | "breakpointTable"
+    | "responsiveBreakpointDemo"
+    | "responsiveTableDemo"
+    | null
+  >(null);
+
+  const handleSectionChange = (
+    section:
+      | "breakpointTable"
+      | "responsiveBreakpointDemo"
+      | "responsiveTableDemo"
+      | null
+  ) => {
+    setActiveSection(section);
+  };
   return (
-    <>
-      {breakpoints && (
+    <Container maxWidth={"xl"}>
+      <ButtonGroup
+        variant="contained"
+        aria-label="responsive filter buttons"
+        sx={{ mb: 3 }}
+      >
+        <Button
+          variant={activeSection === "breakpointTable" ? "contained" : "text"}
+          onClick={() => handleSectionChange("breakpointTable")}
+        >
+          Breakpoint Table
+        </Button>
+        <Button
+          variant={
+            activeSection === "responsiveBreakpointDemo" ? "contained" : "text"
+          }
+          onClick={() => handleSectionChange("responsiveBreakpointDemo")}
+        >
+          Reponsive Breakpoint Demo
+        </Button>
+        <Button
+          variant={
+            activeSection === "responsiveTableDemo" ? "contained" : "text"
+          }
+          onClick={() => handleSectionChange("responsiveTableDemo")}
+        >
+          Responsive Table Demo
+        </Button>
+      </ButtonGroup>
+      {activeSection === "responsiveBreakpointDemo" && (
         <>
           <div className="flex-grow">
             <div className="grid grid-cols-12 gap-4">
@@ -27,14 +71,20 @@ const ResponsivenessTailwind = () => {
           </div>
         </>
       )}
-      {responsiveTables && (
+      {activeSection === "responsiveTableDemo" && (
         <Paper>
           <ResponsiveTableTailwind />
         </Paper>
       )}
-    </>
+      {activeSection === "breakpointTable" && (
+        <>
+          <Paper>
+            <TailwindBreakpoints />
+          </Paper>
+        </>
+      )}
+    </Container>
   );
 };
 
 export default ResponsivenessTailwind;
-  

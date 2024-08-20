@@ -18,7 +18,6 @@ import React from "react";
 import { useStyle } from "./StyleContext";
 import Navigation from "./Navigation";
 
-
 const drawerWidth = 270;
 
 type Section =
@@ -35,9 +34,11 @@ type Section =
   | "shadow"
   | "input"
   | "alert"
+  | "animation"
   | null;
 
 const sections: { key: Section; label: string }[] = [
+  { key: "alert", label: "Alert" },
   { key: "button", label: "Button" },
   { key: "colorScheme", label: "Color Scheme" },
   { key: "typography", label: "Typography" },
@@ -47,7 +48,7 @@ const sections: { key: Section; label: string }[] = [
   { key: "shadow", label: "Shadow" },
   { key: "input", label: "Textfield" },
   { key: "responsiveness", label: "Responsiveness" },
-  { key: "alert", label: "Alert" },
+  { key: "animation", label: "Animation" },
 ];
 
 const App = () => {

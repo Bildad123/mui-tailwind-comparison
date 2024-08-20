@@ -1,8 +1,14 @@
 import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { grey } from "@mui/material/colors";
-import { Box, Button, ButtonGroup, Container } from "@mui/material";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Card,
+  CardMedia,
+  Container,
+} from "@mui/material";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import { useState } from "react";
 
@@ -13,7 +19,7 @@ const borderRadiusClasses = [
   { className: "rounded-sm", borderRadius: "0.125rem" },
   { className: "rounded", borderRadius: "0.25rem" },
   { className: "rounded-md", borderRadius: "0.375rem" },
-  { className: "rounded-lg", borderRadius: "0.5rem" },  
+  { className: "rounded-lg", borderRadius: "0.5rem" },
   { className: "rounded-xl", borderRadius: "0.75rem" },
   { className: "rounded-2xl", borderRadius: "1rem" },
   { className: "rounded-3xl", borderRadius: "1.5rem" },
@@ -21,24 +27,22 @@ const borderRadiusClasses = [
 ];
 
 export default function ImageryMui() {
-
   const [activeSection, setActiveSection] = useState<
-  | "resizingAndCropping"
-  | "profileImage"
-  | null
->(null);
+    "resizingAndCropping" | "profileImage" | null
+  >(null);
 
-const handleSectionChange = (
-  section:
-  | "resizingAndCropping"
-  | "profileImage"
-  | null
-) => {
-  setActiveSection(section);
-};
+  const handleSectionChange = (
+    section: "resizingAndCropping" | "profileImage" | null
+  ) => {
+    setActiveSection(section);
+  };
   return (
     <Container maxWidth="xl">
-       <ButtonGroup variant="contained" aria-label="imagery demo buttons"sx={{mb:3}} >
+      <ButtonGroup
+        variant="contained"
+        aria-label="imagery demo buttons"
+        sx={{ mb: 3 }}
+      >
         <Button
           variant={activeSection === "profileImage" ? "contained" : "text"}
           onClick={() => handleSectionChange("profileImage")}
@@ -46,181 +50,104 @@ const handleSectionChange = (
           Profile Image
         </Button>
         <Button
-          variant={activeSection === "resizingAndCropping" ? "contained" : "text"}
+          variant={
+            activeSection === "resizingAndCropping" ? "contained" : "text"
+          }
           onClick={() => handleSectionChange("resizingAndCropping")}
         >
           Resizing and Cropping
         </Button>
-      
       </ButtonGroup>
       {activeSection === "resizingAndCropping" && (
         <>
-          <Grid container spacing={2} style={{ flexGrow: 1 }}>
+          <Grid container spacing={2} sx={{ flexGrow: 1 }}>
             {/* object-contain */}
             <Grid item xs={4}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+              <Card
+                sx={{ width: 300, height: 300, backgroundColor: grey[100] }}
               >
-                <Paper
-                  style={{
-                    width: 300,
-                    height: 300,
-                    overflow: "hidden",
-                    padding: 8,
-                    backgroundColor: grey[100],
-                  }}
-                >
-                  <img
-                    src={`${imageUrl}?w=300&fit=crop&auto=format`}
-                    alt="Sample"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </Paper>
-                <Typography variant="subtitle2" align="center">
-                  objectFit : contain
-                </Typography>
-              </div>
+                <CardMedia
+                  component="img"
+                  image={`${imageUrl}?w=300&fit=crop&auto=format`}
+                  alt="Sample"
+                  sx={{ width: "100%", height: "100%", objectFit: "contain" }}
+                />
+              </Card>
+              <Typography variant="subtitle2" align="center">
+                objectFit: contain
+              </Typography>
             </Grid>
 
             {/* object-cover */}
             <Grid item xs={4}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+              <Card
+                sx={{ width: 300, height: 300, backgroundColor: grey[100] }}
               >
-                <Paper
-                  style={{
-                    width: 300,
-                    height: 300,
-                    overflow: "hidden",
-                    padding: 8,
-                    backgroundColor: grey[100],
-                  }}
-                >
-                  <img
-                    src={`${imageUrl}?w=300&fit=crop&auto=format`}
-                    alt="Sample"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Paper>
-                <Typography variant="subtitle2" align="center">
-                  objectFit:cover
-                </Typography>
-              </div>
+                <CardMedia
+                  component="img"
+                  image={`${imageUrl}?w=300&fit=crop&auto=format`}
+                  alt="Sample"
+                  sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </Card>
+              <Typography variant="subtitle2" align="center">
+                objectFit: cover
+              </Typography>
             </Grid>
 
             {/* object-fill */}
             <Grid item xs={4}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+              <Card
+                sx={{ width: 300, height: 300, backgroundColor: grey[100] }}
               >
-                <Paper
-                  style={{
-                    width: 300,
-                    height: 300,
-                    overflow: "hidden",
-                    padding: 8,
-                    backgroundColor: grey[100],
-                  }}
-                >
-                  <img
-                    src={`${imageUrl}?w=300&fit=crop&auto=format`}
-                    alt="Sample"
-                    style={{ width: "100%", height: "100%", objectFit: "fill" }}
-                  />
-                </Paper>
-                <Typography variant="subtitle2" align="center">
-                  objectFit:fill
-                </Typography>
-              </div>
+                <CardMedia
+                  component="img"
+                  image={`${imageUrl}?w=300&fit=crop&auto=format`}
+                  alt="Sample"
+                  sx={{ width: "100%", height: "100%", objectFit: "fill" }}
+                />
+              </Card>
+              <Typography variant="subtitle2" align="center">
+                objectFit: fill
+              </Typography>
             </Grid>
 
             {/* object-none */}
             <Grid item xs={4}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+              <Card
+                sx={{ width: 300, height: 300, backgroundColor: grey[100] }}
               >
-                <Paper
-                  style={{
-                    width: 300,
-                    height: 300,
-                    overflow: "hidden",
-                    padding: 8,
-                    backgroundColor: grey[100],
-                  }}
-                >
-                  <img
-                    src={`${imageUrl}?w=300&fit=crop&auto=format`}
-                    alt="Sample"
-                    style={{ width: "100%", height: "100%", objectFit: "none" }}
-                  />
-                </Paper>
-                <Typography variant="subtitle2" align="center">
-                  objectFit:none
-                </Typography>
-              </div>
+                <CardMedia
+                  component="img"
+                  image={`${imageUrl}?w=300&fit=crop&auto=format`}
+                  alt="Sample"
+                  sx={{ width: "100%", height: "100%", objectFit: "none" }}
+                />
+              </Card>
+              <Typography variant="subtitle2" align="center">
+                objectFit: none
+              </Typography>
             </Grid>
 
             {/* object-scale-down */}
             <Grid item xs={4}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+              <Card
+                sx={{ width: 300, height: 300, backgroundColor: grey[100] }}
               >
-                <Paper
-                  style={{
-                    width: 300,
-                    height: 300,
-                    overflow: "hidden",
-                    padding: 8,
-                    backgroundColor: grey[100],
+                <CardMedia
+                  component="img"
+                  image={`${imageUrl}?w=300&fit=crop&auto=format`}
+                  alt="Sample"
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "scale-down",
                   }}
-                >
-                  <img
-                    src={`${imageUrl}?w=300&fit=crop&auto=format`}
-                    alt="Sample"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "scale-down",
-                    }}
-                  />
-                </Paper>
-                <Typography variant="subtitle2" align="center">
-                  objectFit:scale-down
-                </Typography>
-              </div>
+                />
+              </Card>
+              <Typography variant="subtitle2" align="center">
+                objectFit: scale-down
+              </Typography>
             </Grid>
           </Grid>
         </>

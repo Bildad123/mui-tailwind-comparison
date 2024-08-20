@@ -1,11 +1,4 @@
-import {
-  Alert,
-
-  Button,
-  ButtonGroup,
-  Container,
-  Stack,
-} from "@mui/material";
+import { Alert, Button, ButtonGroup, Container, Stack } from "@mui/material";
 import { useState } from "react";
 
 const AlertMui = () => {
@@ -30,7 +23,30 @@ const AlertMui = () => {
 
   return (
     <Container maxWidth={"xl"}>
-  
+      <ButtonGroup
+        variant="contained"
+        aria-label="alert demo buttons"
+        sx={{ mb: 2 }}
+      >
+        <Button
+          variant={activeSection === "DefaultAlert" ? "contained" : "text"}
+          onClick={() => handleSectionChange("DefaultAlert")}
+        >
+          Default Alert
+        </Button>
+        <Button
+          variant={activeSection === "Severity" ? "contained" : "text"}
+          onClick={() => handleSectionChange("Severity")}
+        >
+          Severity
+        </Button>
+        <Button
+          variant={activeSection === "Variants" ? "contained" : "text"}
+          onClick={() => handleSectionChange("Variants")}
+        >
+          Variants
+        </Button>
+      </ButtonGroup>
 
       {activeSection === "DefaultAlert" && (
         <>
@@ -47,7 +63,7 @@ const AlertMui = () => {
         </Stack>
       )}
 
-      {activeSection === "Variants" &&  (
+      {activeSection === "Variants" && (
         <Stack gap={6}>
           <Stack gap={2}>
             <Alert variant="filled" severity="success">
