@@ -1,4 +1,4 @@
-# GameHub - React Application
+# Comparison- React Application
 
 This  is a React-based web application that compares and constrast how Tailwind css and Material UI measure up in standard web application use cases
 ## Tech Stack
